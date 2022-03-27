@@ -1,3 +1,4 @@
+package Recursion;
 public class Test {
     public static void main(String[] args) {
       xMethod(1234567);
@@ -5,7 +6,7 @@ public class Test {
   
     public static void xMethod(int n) {
       if (n > 0) {
-        System.out.print(n % 10);
+        System.out.print(n % 10+"|s");
         xMethod(n / 10);
       }
     }
