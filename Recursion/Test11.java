@@ -4,6 +4,12 @@ date: 03/28/2022
 */
 package Recursion;
 
+// [1, 3, 2, 4, 3, 1]
+// 1
+// 1 + 3
+// 1 + 3 + 2
+// 1 + 3 + 2 + 4 + 3 
+// 1 + 3 + 2 + 4 + 3 + 1
 public class Test11 {
     public static void main(String args[]){
         int[] array = new int[]{1, 3, 2, 4, 3, 1};
@@ -21,10 +27,3 @@ public class Test11 {
     }
 
 }
-
-// [1, 3, 2, 4, 3, 1]
-// 1
-// 1 + 3
-// 1 + 3 + 2
-// 1 + 3 + 2 + 4 + 3 
-// 1 + 3 + 2 + 4 + 3 + 1

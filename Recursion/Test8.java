@@ -4,6 +4,15 @@ date: 03/28/2022
 */
 package Recursion;
 
+// ********
+// *
+// makeStars(n - 1)
+// * + *
+// makeStars(n - 1) + makeStars(n - 2) 
+// * + * + *
+// * + * + * + *
+// * + * + * + * + *
+// * + * + * + * + * + *
 public class Test8 {
     public static void main(String args[]) {
         System.out.println(makeStars(0));
@@ -20,13 +29,3 @@ public class Test8 {
         return '*' + makeStars(n-1);
     }
 }
-
-// ********
-// *
-// makeStars(n - 1)
-// * + *
-// makeStars(n - 1) + makeStars(n - 2) 
-// * + * + *
-// * + * + * + *
-// * + * + * + * + *
-// * + * + * + * + * + *

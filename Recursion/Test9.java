@@ -2,6 +2,15 @@
 author: Evan Gertis
 date: 03/28/2022
 */
+
+// :::::
+// :
+// makeLine(parameter-1, c)
+// : + :
+// makeLine(parameter-1, c) + makeLine(parameter-2, c) 
+// : + : + :
+// : + : + : + :
+// : + : + : + : + :
 package Recursion;
 
 public class Test9 {
@@ -19,13 +28,4 @@ public class Test9 {
     }
     
 }
-
-// :::::
-// :
-// makeLine(parameter-1, c)
-// : + :
-// makeLine(parameter-1, c) + makeLine(parameter-2, c) 
-// : + : + :
-// : + : + : + :
-// : + : + : + : + :
 
