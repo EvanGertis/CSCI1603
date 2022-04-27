@@ -6,7 +6,7 @@ print module
 output: 1 2 3 4 5
 */
 
-public class printReverse {
+public class printModule {
     public static void main(String[] args){
         xMethod(5);
     }
