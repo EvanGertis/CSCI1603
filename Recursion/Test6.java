@@ -2,7 +2,7 @@ package Recursion;
 
 public class Test6 {
     public static void main(String[] args){
-        System.out.println(oddevenfact(6));
+        System.out.println(oddevenfact(7));
     }
 
     public static long oddevenfact(int n){
