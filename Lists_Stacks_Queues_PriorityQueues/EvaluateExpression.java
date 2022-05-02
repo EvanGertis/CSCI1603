@@ -19,8 +19,7 @@ public class EvaluateExpression {
 
   /** Evaluate an expression */
   public static int evaluateExpression(String expression) throws Exception {
-    System.out.println("Entering evaluateExpression: "+expression);
-    // Create operandStack to store operands
+    // Create operandsStack to store operands
     Stack<Integer> operandStack = new Stack<>();
   
     // Create operatorStack to store operators
