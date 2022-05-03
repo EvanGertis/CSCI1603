@@ -115,7 +115,7 @@ public class Exercise23_11 {
         return list.size() == 0;
       }
     
-  // BEGIN REVEL SUBMISSION
+// BEGIN REVEL SUBMISSION
   @Override /** Override the proctected clone method defined in
   the Object class, and stregthen its accessibility */
   public Object clone() {

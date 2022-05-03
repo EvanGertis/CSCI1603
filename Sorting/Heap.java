@@ -105,13 +105,38 @@ public class Heap<E> implements Cloneable {
     return list.size() == 0;
   }
 
-  // TODO: implement clone
-  public Object clone() {
+// BEGIN REVEL SUBMISSION
+@Override /** Override the proctected clone method defined in
+the Object class, and stregthen its accessibility */
+public Object clone() {
+    // Method one of performing clone
+    // Heap<E> heap = new Heap();
+    // heap.list = new java.util.ArrayList(list);
+    // return heap;
+    try {
+      Heap<E> newHeap = (Heap<E>)(super.clone());
+      // cast to an ArrayList
+      newHeap.list    = (java.util.ArrayList<E>)(list.clone());
+      return new Heap<>();
+    }
+    catch (CloneNotSupportedException ex) {
+      return null;
+    }
+}
 
-  }
+@Override /** Override the equals method in the Object cl */
+public boolean equals(Object other) {
+    // Alternative method
+    // if (list.size() != ((Heap<E>) (other)).getSize())
+    //     return false;
 
-  // TODO: implement equals
-  public boolean equals(Object o) {
-
-  }
+    // for (int i = 0; i < list.size(); i++) {
+    //     if (list.get(i) != ((Heap<E>) (other)).list.get(i))
+    //         return false;
+    // }
+    // return true;
+    // Cast to Heap
+    return this.list.equals(((Heap<E>)other).list);
+}
+// END REVEL SUBMISSION
 }
