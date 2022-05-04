@@ -6,58 +6,74 @@ Date: 05/04
 program: RadixSort
 */
 public class RadixSort {
-    static int getMax(int arr[], int n){
-        int max = arr[0];
-        for(int i=0; i < n; i++){
-            if(arr[i] > max)
-                max = arr[i];
-        }
-        return max;
+    // A utility function to get maximum value in arr[]
+    static int getMax(int arr[], int n)
+    {
+        int mx = arr[0];
+        for (int i = 1; i < n; i++)
+            if (arr[i] > mx)
+                mx = arr[i];
+        return mx;
     }
-
-    static void countSort(int arr[], int n, int base){
-        int[] output = new int[n]; // output array
+ 
+    // A function to do counting sort of arr[] according to
+    // the digit represented by exp.
+    static void countSort(int arr[], int n, int exp)
+    {
+        int output[] = new int[n]; // output array
         int i;
         int count[] = new int[10];
         Arrays.fill(count, 0);
-
-        // store count of occurences in count[]
-        for(i = 0; i < n; i++){
-            count[(arr[i]/base)%base %10]++;
+ 
+        // Store count of occurrences in count[]
+        for (i = 0; i < n; i++)
+            count[(arr[i] / exp) % 10]++;
+ 
+        // Change count[i] so that count[i] now contains
+        // actual position of this digit in output[]
+        for (i = 1; i < 10; i++)
+            count[i] += count[i - 1];
+ 
+        // Build the output array
+        for (i = n - 1; i >= 0; i--) {
+            output[count[(arr[i] / exp) % 10] - 1] = arr[i];
+            count[(arr[i] / exp) % 10]--;
         }
-
-        // copy the output array to arr[], so that arr[] now
+ 
+        // Copy the output array to arr[], so that arr[] now
         // contains sorted numbers according to current digit
-        for(i=0; i < n; i++)
+        for (i = 0; i < n; i++)
             arr[i] = output[i];
     }
-
-    // radix sort
+ 
+    // The main function to that sorts arr[] of size n using
+    // Radix Sort
     static void radixsort(int arr[], int n)
     {
-        // find the maximum number to know number of digits
+        // Find the maximum number to know number of digits
         int m = getMax(arr, n);
-
-        // perform counting sort for every digit. Note that instead 
-        // of passing digit number, base is passed.
-        // base is 10^i where is is current digit number
-        for(int base = 1; m / base > 0; base *= 10)
-            countSort(arr, n, base);
+ 
+        // Do counting sort for every digit. Note that
+        // instead of passing digit number, exp is passed.
+        // exp is 10^i where i is current digit number
+        for (int exp = 1; m / exp > 0; exp *= 10)
+            countSort(arr, n, exp);
     }
-
-    // utility function to print an array
+ 
+    // A utility function to print an array
     static void print(int arr[], int n)
     {
-        for(int i = 0; i < n; i++)
+        for (int i = 0; i < n; i++)
             System.out.print(arr[i] + " ");
     }
-
-    public static void main(String[] args){
-        int arr[] = {170, 45, 75, 90, 802, 24, 2, 66};
-        int n     = arr.length;
-
-        // function call
-        print(arr, n);
+ 
+    /*Driver Code*/
+    public static void main(String[] args)
+    {
+        int arr[] = { 454,34,23,43,74,86,76 };
+        int n = arr.length;
+           
+          // Function Call
         radixsort(arr, n);
         print(arr, n);
     }
